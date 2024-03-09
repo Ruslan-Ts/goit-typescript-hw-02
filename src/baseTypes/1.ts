@@ -8,3 +8,37 @@ let notInitialize: undefined;
 let callback = (a: number):number => { return 100 + a };
 
 export {};
+
+
+class Team {
+    members: Programmer[];
+    constructor(members: Programmer[]) {
+        this.members = members;
+    }
+    startProject() {
+        this.members.forEach(member => member.code());
+    }
+}
+
+class Programmer {
+    code() {
+        console.log('Coding...');
+    }
+}
+
+const programmers = [new Programmer(), new Programmer()];
+const team = new Team(programmers); team.startProject();
+
+
+class Computer {
+    processor: Processor; constructor() {
+        this.processor = new Processor();
+    } start() {
+        this.processor.processData();
+    }
+}
+class Processor {
+    processData() { console.log('Processing data...'); }
+}
+
+const computer = new Computer(); computer.start();
