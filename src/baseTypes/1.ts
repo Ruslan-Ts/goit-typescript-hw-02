@@ -21,7 +21,7 @@ class Team {
 }
 
 class Programmer {
-    code() {
+    code():void {
         console.log('Coding...');
     }
 }
@@ -31,14 +31,17 @@ const team = new Team(programmers); team.startProject();
 
 
 class Computer {
-    processor: Processor; constructor() {
+    processor: Processor;
+    constructor() {
         this.processor = new Processor();
-    } start() {
+    } start():void {
         this.processor.processData();
     }
 }
 class Processor {
-    processData() { console.log('Processing data...'); }
+    processData(): void {
+        console.log('Processing data...');
+    }
 }
 
 const computer = new Computer(); computer.start();
